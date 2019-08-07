@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  randomNumber;
+  constructor() { }
 
+  generateRandomNumber() {
+    this.randomNumber = (Math.random() * 4294967296) >>> 0;
+
+  }
 }
