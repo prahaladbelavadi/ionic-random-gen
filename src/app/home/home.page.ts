@@ -11,7 +11,7 @@ export class HomePage {
   constructor() { }
 
   generateRandomNumber() {
-    this.randomNumber = (Math.random() * 4294967296) >>> 0;
+    this.randomNumber = window.crypto.getRandomValues(new Uint32Array(1))[0];
 
   }
 }
