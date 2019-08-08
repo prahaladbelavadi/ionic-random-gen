@@ -9,13 +9,24 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="randomNumber" style="text-align: center" class="ion-padding">
-  <strong> Random Number
-  </strong>
-  {{randomNumber}}
+<ion-content style="text-align: center" class="ion-padding">
+  <ion-card *ngIf="randomNumber">
+    <ion-card-header>
+      <strong>
+        Random Number
+      </strong>
+    </ion-card-header>
+    <ion-card-content>
+      {{randomNumber}}
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 
 <ion-footer>
+  <ion-button expand="block" (click)="generateRandomNumber()">
+    Generate Random number
+  </ion-button>
+
   <ion-button expand="block" (click)="generateRandomNumber()">
     Generate Random number
   </ion-button>
