@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CryptoService } from '../crypto.service';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,17 @@ import { Component } from '@angular/core';
 export class HomePage {
 
   randomNumber;
-  constructor() { }
+  keys;
+  constructor(public cryptoService: CryptoService) { }
 
   generateRandomNumber() {
     this.randomNumber = window.crypto.getRandomValues(new Uint32Array(1))[0];
+  }
+
+  generateKeys() {
+    this.cryptoService.generatekeys('')
 
   }
+
+
 }
